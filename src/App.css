@@ -7,11 +7,10 @@
   font-family: 'Arial' sans-serif;
 }
 
-.budgets, .expenses, .home, .loans-debts, .savings, .shared-expenses, .wallets {
+.budgets, .expenses, .home, .loans-debts, .savings, .shared-expenses {
   display: flex;
   height: 90vh;
   align-items: center;
   justify-content: center;
   font-size: 3rem;
-
 }
