@@ -4,8 +4,11 @@ import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { IconContext } from 'react-icons';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { SidebarItems } from './SidebarItems';
+import { ToastContainer } from 'react-toastify';
+
 import './Navbar.css'
 
 function Navbar() {
@@ -23,6 +26,19 @@ function Navbar() {
           <Link to='#' className='menu-bars'>
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
+        </div>
+        <div>
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+          />
         </div>
 
         <nav className={classNames('nav-menu', { 'active': sidebar })}>
