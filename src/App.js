@@ -8,7 +8,7 @@ import Home from './pages/Home';
 import LoansAndDebts from './pages/LoansAndDebts';
 import Savings from './pages/Savings';
 import SharedExpenses from './pages/SharedExpenses';
-import Wallets from './pages/Wallets';
+import Wallets from './pages/Wallets/Wallets';
 
 function App() {
   return (

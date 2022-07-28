@@ -3,13 +3,14 @@ import PropType from 'prop-types';
 import { Form } from 'react-bootstrap';
 
 function WalletForm(props) {
-  const { className = '' } = props;
+  const onNameChange = (input) => props.onNameChange(input.target.value);
+
   return (
-    <div className={className}>
+    <div>
       <Form>
         <Form.Group className='mb-3' controlId='walletForm'>
           <Form.Label>Wallet Name</Form.Label>
-          <Form.Control type='text' placeholder='Enter wallet name' />
+          <Form.Control onChange={onNameChange} type='text' placeholder='Enter wallet name' />
         </Form.Group>
       </Form>
     </div>
@@ -17,7 +18,7 @@ function WalletForm(props) {
 }
 
 WalletForm.prototype = {
-  className: PropType.string
+  onNameChange: PropType.func
 }
 
 export default WalletForm
