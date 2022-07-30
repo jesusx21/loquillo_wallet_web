@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 
-import '../App.css'
 import WalletForm from '../components/WalletForm';
 import { Modal } from 'react-bootstrap';
+
+import '../App.css'
 
 function Wallets() {
   const [showModal, setShowModal] = useState(false);

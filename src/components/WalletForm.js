@@ -4,6 +4,7 @@ import { Form } from 'react-bootstrap';
 
 function WalletForm(props) {
   const { className = '' } = props;
+
   return (
     <div className={className}>
       <Form>
