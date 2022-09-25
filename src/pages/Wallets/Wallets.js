@@ -12,7 +12,9 @@ function Wallets() {
   const [showModal, setShowModal] = useState(false);
   const [name, setName] = useState('');
 
-  const onCreateWalletClick = () => setShowModal(true);
+  const handleCLickCreateWallet = () => setShowModal(true);
+
+  const handleCloseModal = () => setShowModal(false);
 
   const createWallet = async () => {
     let data;
@@ -35,16 +37,12 @@ function Wallets() {
 
   };
 
-  const handleCloseModal = () => {
-    setShowModal(false);
-  };
-
   return (
     <div className='wallets'>
       <Button
         variant="primary"
         size="lg"
-        onClick={onCreateWalletClick}
+        onClick={handleCLickCreateWallet}
       >
         Create Wallet
       </Button>

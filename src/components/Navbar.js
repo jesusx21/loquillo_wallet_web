@@ -4,11 +4,11 @@ import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { IconContext } from 'react-icons';
-import 'react-toastify/dist/ReactToastify.css';
 
 import { SidebarItems } from './SidebarItems';
 import { ToastContainer } from 'react-toastify';
 
+import 'react-toastify/dist/ReactToastify.css';
 import './Navbar.css'
 
 function Navbar() {
