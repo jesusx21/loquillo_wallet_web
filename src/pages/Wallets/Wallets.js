@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import Button from 'react-bootstrap/Button';
 
@@ -7,10 +7,26 @@ import WalletForm from '../../components/WalletForm';
 import { Modal } from 'react-bootstrap';
 import * as api from './api';
 import '../../App.css';
+import WalletsList from './WalletsList';
 
 function Wallets() {
   const [showModal, setShowModal] = useState(false);
   const [name, setName] = useState('');
+  const [wallets, setWallets] = useState([]);
+
+  const fetchWallets = async (query = {}) => {
+    try {
+      const items = await api.getWallets();
+
+      setWallets(items)
+    } catch (error) {
+      toast.error('Error fetching wallets');
+    }
+  };
+
+  useEffect(() => {
+    fetchWallets()
+  }, []);
 
   const handleCLickCreateWallet = () => setShowModal(true);
 
@@ -34,7 +50,6 @@ function Wallets() {
         toast.error('There\'s a problem wi¡th the server, please contact support', toastParams);
       }
     }
-
   };
 
   return (
@@ -46,6 +61,8 @@ function Wallets() {
       >
         Create Wallet
       </Button>
+
+      <WalletsList wallets={wallets}/>
 
       <Modal show={showModal} onHide={handleCloseModal} >
         <Modal.Header closeButton>

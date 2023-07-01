@@ -5,3 +5,9 @@ export async function createWallet(params) {
 
   return data;
 }
+
+export async function getWallets(params = {}) {
+  const { data } = await api.get('wallets', params);
+
+  return data;
+}
